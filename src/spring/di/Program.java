@@ -1,5 +1,8 @@
 package spring.di;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,7 +13,7 @@ import spring.di.ui.GridExamConsole;
 import spring.di.ui.InlineExamConsole;
 
 public class Program {
-	
+	// 14강 
 	public static void main(String[] args) {
 		
 		/*
@@ -24,10 +27,20 @@ public class Program {
 				new ClassPathXmlApplicationContext("spring/di/setting.xml");
 		
 		//ExamConsole console = (ExamConsole) context.getBean("console");
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
+		//Exam exam = context.getBean(Exam.class);
+		//System.out.println(exam.toString());
+		
+		
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
+		
+//		List<Exam> exams = (List<Exam>) context.getBean("exams");//new ArrayList<>();
+		
+		
+//		for(Exam e : exams) {
+//			System.out.println(e);
+//		}
+		
 	}
 
 }
