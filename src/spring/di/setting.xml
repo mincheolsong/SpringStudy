@@ -8,19 +8,20 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="spring.di.ui, spring.di.entity"></context:component-scan>
+	<!-- <context:annotation-config></context:annotation-config> -->
 	
-	<!-- <bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" />
-	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" /> -->
+	<bean id="exam" class="spring.di.entity.NewlecExam"  />
+	<!-- <bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" /> -->
 	<!-- <bean id="exam" class="spring.di.entity.NewlecExam"> <constructor-arg 
 		name="kor" value="10"/> <constructor-arg name="eng" value="20"/> <constructor-arg 
 		index="3" value="30"/> <constructor-arg index="2" value="40"/> </bean> -->
 
-	<bean id="console" class="spring.di.ui.InlineExamConsole">
-		<!-- <property name="exam">
+	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
+		<property name="exam">
 			<ref bean="exam" />
-		</property> -->
-	</bean>
+		</property>
+	</bean> -->
 
 	<!-- <util:list id="exams" list-class="java.util.ArrayList">
 		<bean class="spring.di.entity.NewlecExam" p:kor="1" p:eng="1"></bean>

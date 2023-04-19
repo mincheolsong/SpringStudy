@@ -2,17 +2,19 @@ package spring.di.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import spring.di.entity.Exam;
 
+@Component("console")
 public class InlineExamConsole implements ExamConsole {
 
-	@Autowired(required=false)
-	@Qualifier("exam2")
+	@Autowired
+	//@Qualifier("exam2")
 	private Exam exam;
 	
 	public InlineExamConsole() {
-		// TODO Auto-generated constructor stub
+		System.out.println("constructor");
 	}
 	
 	
